@@ -152,6 +152,7 @@ function AmbientVideo({
     const video = videoRef.current;
     if (!video) return;
 
+    const isMobile = window.matchMedia("(max-width: 768px)").matches;
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -162,7 +163,7 @@ function AmbientVideo({
           setPaused(true);
         }
       },
-      { rootMargin: "220px 0px", threshold: 0.08 },
+      { rootMargin: isMobile ? "0px" : "220px 0px", threshold: 0.08 },
     );
 
     observer.observe(video);

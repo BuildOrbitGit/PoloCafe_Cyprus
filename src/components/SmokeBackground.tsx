@@ -92,7 +92,8 @@ class Renderer {
 
   updateScale() {
     if (!this.gl) return;
-    const dpr = Math.max(1, Math.min(window.devicePixelRatio, 2));
+    const isMobile = window.matchMedia("(max-width: 768px)").matches;
+    const dpr = isMobile ? 1 : Math.max(1, Math.min(window.devicePixelRatio, 2));
     const { innerWidth: width, innerHeight: height } = window;
     this.canvas.width = width * dpr;
     this.canvas.height = height * dpr;
@@ -191,10 +192,15 @@ export default function SmokeBackground({ smokeColor = "#c9002b" }: { smokeColor
     handleResize();
     window.addEventListener("resize", handleResize);
 
+    const isMobile = window.matchMedia("(max-width: 768px)").matches;
+    const frameInterval = isMobile ? 1000 / 30 : 0;
     let animationFrameId = 0;
+    let lastFrame = 0;
     const loop = (now: number) => {
-      renderer.render(now);
       animationFrameId = requestAnimationFrame(loop);
+      if (now - lastFrame < frameInterval) return;
+      lastFrame = now;
+      renderer.render(now);
     };
     loop(0);
 

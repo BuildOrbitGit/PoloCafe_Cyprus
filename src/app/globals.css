@@ -466,6 +466,8 @@ a {
 }
 
 .story-section {
+  content-visibility: auto;
+  contain-intrinsic-size: 0 100svh;
   position: relative;
   min-height: 100svh;
   padding: max(clamp(72px, 8vw, 116px), 104px) 0 clamp(38px, 5vw, 70px);
@@ -753,6 +755,8 @@ a {
 }
 
 .menu-section {
+  content-visibility: auto;
+  contain-intrinsic-size: 0 100svh;
   position: relative;
   overflow: hidden;
   background:
@@ -998,6 +1002,8 @@ a {
 }
 
 .visit-section {
+  content-visibility: auto;
+  contain-intrinsic-size: 0 100svh;
   position: relative;
   overflow: hidden;
   isolation: isolate;
@@ -1008,7 +1014,7 @@ a {
   position: relative;
   z-index: 3;
   margin: 0 auto;
-  padding: max(clamp(72px, 8vw, 108px), 96px) max(22px, 5vw) 0;
+  padding: clamp(40px, 4vw, 60px) max(22px, 5vw) 0;
   text-align: center;
 }
 
@@ -1024,7 +1030,7 @@ a {
 
 .visit-grid.section-pad {
   padding-top: clamp(28px, 3.8vw, 50px);
-  padding-bottom: clamp(50px, 6vw, 76px);
+  padding-bottom: 0;
 }
 
 .visit-image-panel {
@@ -1062,35 +1068,38 @@ a {
 }
 
 .visit-image-panel img {
-  object-fit: contain;
+  object-fit: cover;
   object-position: 50% 50%;
-  filter: contrast(1.1) saturate(1.22) brightness(1.28);
+  filter: contrast(1.18) saturate(1.35) brightness(1.15);
+  transform: scale(1.0);
 }
 
 .visit-card {
   position: relative;
   z-index: 2;
-  width: min(78%, 430px);
+  width: min(88%, 460px);
   padding: clamp(20px, 2.4vw, 30px);
-  border: 1px solid rgba(244, 238, 231, 0.34);
-  border-radius: 8px;
-  background: rgba(8, 5, 4, 0.66);
-  backdrop-filter: blur(8px);
-  box-shadow: 0 22px 62px rgba(0, 0, 0, 0.32), 0 0 34px rgba(201, 0, 43, 0.14);
+  border: none;
+  border-radius: 0;
+  background: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  box-shadow: none;
 }
 
 .visit-card > p:not(.eyebrow) {
   margin: 8px 0 0;
-  color: rgba(244, 238, 231, 0.84);
+  color: rgba(244, 238, 231, 0.9);
   font-size: clamp(16px, 1.1vw, 18px);
   line-height: 1.5;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.7);
 }
 
 .visit-card dl {
   margin: 18px 0 0;
   display: grid;
   gap: 0;
-  border-top: 1px solid rgba(244, 238, 231, 0.2);
+  border-top: 1px solid rgba(244, 238, 231, 0.25);
 }
 
 .visit-card dl div {
@@ -1099,7 +1108,7 @@ a {
   grid-template-columns: 104px 1fr;
   gap: 12px;
   align-items: center;
-  border-bottom: 1px solid rgba(244, 238, 231, 0.18);
+  border-bottom: 1px solid rgba(244, 238, 231, 0.2);
 }
 
 .visit-card dt {
@@ -1108,6 +1117,7 @@ a {
   font-weight: 900;
   letter-spacing: 0.16em;
   text-transform: uppercase;
+  text-shadow: 0 1px 6px rgba(0,0,0,0.6);
 }
 
 .visit-card dd {
@@ -1115,6 +1125,7 @@ a {
   color: white;
   font-size: clamp(16px, 1.1vw, 18px);
   font-weight: 700;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.75);
 }
 
 .map-panel {
@@ -1291,7 +1302,7 @@ a {
 
 @media (max-width: 720px) {
   .section-pad {
-    padding: 104px 18px 78px;
+    padding: 80px 16px 60px;
   }
 
   .persistent-cafe-header {
@@ -1481,28 +1492,39 @@ a {
   }
 
   .visit-card {
-    padding: 30px 20px;
-    width: min(92%, 520px);
+    padding: 28px 22px;
+    width: min(96%, 520px);
+    align-self: end;
+    margin-bottom: 28px;
   }
 
   .visit-heading {
     text-align: center;
   }
 
+  .visit-card > p:not(.eyebrow) {
+    font-size: 15px;
+  }
+
   .visit-card dl div {
-    grid-template-columns: 1fr;
-    gap: 6px;
-    align-items: start;
-    padding: 15px 0;
+    grid-template-columns: 90px 1fr;
+    gap: 8px;
+    align-items: center;
+    padding: 10px 0;
+  }
+
+  .visit-card dd {
+    font-size: 15px;
   }
 
   .visit-image-panel {
-    min-height: 560px;
+    min-height: 480px;
+    order: -1;
   }
 
   .map-panel,
   .map-panel iframe {
-    min-height: 430px;
+    min-height: 360px;
   }
 
   .polo-footer {
