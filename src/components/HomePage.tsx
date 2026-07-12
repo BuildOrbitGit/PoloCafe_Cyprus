@@ -9,6 +9,7 @@ import SmokeBackground from "./SmokeBackground";
 const media = {
   galleryVideo: "/media/video/gallery-atmosphere.mp4",
   menuVideo: "/media/video/coffee-roast-background.mp4",
+  menuVideoMobile: "/media/video/coffee-roast-background-mobile.mp4",
   espressoDetailsVideo: "/media/video/espresso-details.mp4",
   brandedLatte: "/media/gallery/branded-latte-crop.webp",
   espressoPour: "/media/gallery/espresso-pour-crop.webp",
@@ -136,11 +137,13 @@ const fadeUp = {
 
 function AmbientVideo({
   src,
+  mobileSrc,
   poster,
   className,
   preload = "metadata",
 }: {
   src: string;
+  mobileSrc?: string;
   poster: string;
   className?: string;
   preload?: "none" | "metadata";
@@ -174,6 +177,7 @@ function AmbientVideo({
   return (
     <div className={`video-shell ${className ?? ""}`}>
       <video ref={videoRef} autoPlay muted loop playsInline preload={preload} poster={poster}>
+        {mobileSrc && <source src={mobileSrc} type="video/mp4" media="(max-width: 768px)" />}
         <source src={src} type="video/mp4" />
       </video>
       <span className="video-state" aria-hidden="true">
@@ -335,7 +339,7 @@ function MenuSection() {
   return (
     <section className="menu-section section-pad" id="menu">
       <div className="menu-video-bg">
-        <AmbientVideo src={media.menuVideo} poster={media.espressoPour} preload="none" />
+        <AmbientVideo src={media.menuVideo} mobileSrc={media.menuVideoMobile} poster={media.espressoPour} preload="none" />
       </div>
       <div className="espresso-divider" aria-hidden="true" />
 
