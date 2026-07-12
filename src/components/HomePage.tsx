@@ -156,6 +156,7 @@ function AmbientVideo({
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
+          if (video.readyState === 0) video.load();
           video.play().catch(() => undefined);
           setPaused(false);
         } else {
@@ -163,7 +164,7 @@ function AmbientVideo({
           setPaused(true);
         }
       },
-      { rootMargin: isMobile ? "0px" : "220px 0px", threshold: 0.08 },
+      { rootMargin: isMobile ? "200px 0px" : "220px 0px", threshold: 0 },
     );
 
     observer.observe(video);

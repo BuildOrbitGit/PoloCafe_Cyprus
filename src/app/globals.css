@@ -779,9 +779,6 @@ a {
 
 .menu-video-bg .video-shell {
   height: 100%;
-  width: 100%;
-  position: absolute;
-  inset: 0;
 }
 
 .menu-video-bg::after {
