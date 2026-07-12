@@ -41,3 +41,4 @@ elenas-cafe-website-package/
 
 # unrelated local scratch assets
 assets/videos/
+.vercel
