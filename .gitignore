@@ -1,0 +1,43 @@
+# dependencies
+node_modules/
+
+# Next.js
+.next/
+out/
+
+# environment
+.env
+.env.*
+!.env.example
+
+# Vercel local state
+.vercel/
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+
+# local browser/test artifacts
+chrome-temp-profile*/
+chrome-log-profile/
+browser-check*
+homepage-*.png
+zoom-parallax-*.png
+*-dom.html
+*-err.txt
+aph-*.html
+aph-*.txt
+polo-*.txt
+
+# generated archives and local previews
+*.zip
+elena-*.png
+elena-*.jpg
+elena-*.jpeg
+elenas-cafe-website-package/
+
+# unrelated local scratch assets
+assets/videos/
