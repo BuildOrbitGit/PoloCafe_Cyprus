@@ -755,8 +755,6 @@ a {
 }
 
 .menu-section {
-  content-visibility: auto;
-  contain-intrinsic-size: 0 100svh;
   position: relative;
   overflow: hidden;
   background:
@@ -777,6 +775,13 @@ a {
   filter: contrast(1.06) saturate(1.18) brightness(1.18);
   transform: scale(1.01);
   pointer-events: none;
+}
+
+.menu-video-bg .video-shell {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  inset: 0;
 }
 
 .menu-video-bg::after {
