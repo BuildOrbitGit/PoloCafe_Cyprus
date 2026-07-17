@@ -432,7 +432,7 @@ function VisitSection() {
         viewport={{ once: true, amount: 0.3 }}
         variants={fadeUp}
       >
-        <p className="eyebrow">Limassol, Cyprus</p>
+        <p className="eyebrow">Misiaouli & Kavazoglou 118</p>
         <h2>Where To Find Us</h2>
       </motion.div>
 
@@ -446,10 +446,9 @@ function VisitSection() {
           <span className="map-pin" aria-hidden="true">
             <MapPin />
           </span>
-          {/* Replace the Limassol city query with the exact street address when it is available. */}
           <iframe
-            title="Map showing Limassol, Cyprus"
-            src="https://www.google.com/maps?q=Limassol%2C%20Cyprus&output=embed"
+            title="Map showing Misiaouli and Kavazoglou 118, Limassol"
+            src="https://www.google.com/maps?q=Misiaouli%20%26%20Kavazoglou%20118%2C%203016%20Limassol%2C%20Cyprus&output=embed"
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
           />
@@ -469,15 +468,15 @@ function VisitSection() {
             <dl>
               <div>
                 <dt>Address</dt>
-                <dd>Limassol, Cyprus</dd>
+                <dd>Misiaouli & Kavazoglou 118, 3016 Limassol</dd>
               </div>
               <div>
                 <dt>Phone</dt>
-                <dd>Coming soon</dd>
+                <dd>25252494</dd>
               </div>
               <div>
-                <dt>Hours</dt>
-                <dd>Coming soon</dd>
+                <dt>Email</dt>
+                <dd>Cafepololimassol@gmail.com</dd>
               </div>
               <div>
                 <dt>Instagram</dt>
@@ -487,7 +486,7 @@ function VisitSection() {
 
             <div className="visit-actions">
               <a
-                href="https://www.google.com/maps/search/?api=1&query=Limassol%2C%20Cyprus"
+                href="https://www.google.com/maps/search/?api=1&query=Misiaouli%20%26%20Kavazoglou%20118%2C%203016%20Limassol%2C%20Cyprus"
                 target="_blank"
                 rel="noreferrer"
                 className="primary-action"
@@ -512,7 +511,7 @@ function VisitSection() {
       <footer className="polo-footer">
         <div>
           <strong>Caffè Polo Venezia</strong>
-          <span>Limassol, Cyprus</span>
+          <span>Misiaouli & Kavazoglou 118, 3016 Limassol</span>
         </div>
         <nav aria-label="Footer navigation">
           {navItems.map((item) => (
@@ -542,4 +541,3 @@ export default function HomePage() {
     </>
   );
 }
-
